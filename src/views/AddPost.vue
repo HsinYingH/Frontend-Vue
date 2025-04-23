@@ -29,14 +29,14 @@
           return
       }
       const postData= {
-        userId: userId, // 假設目前是 userId = 1，你可以替換成從登入狀態抓的
+        userId: userId, 
         content: content.value,
         createAt: new Date().toISOString().slice(0, 19).replace('T', ' ')
       }
 
       try {
         await axios.post('http://localhost:8080/Post', postData)
-        router.push('/') // 發完文導回首頁
+        router.push('/') 
       } catch (err) {
         error.value= '發文失敗'
         console.error('發文失敗', err)
